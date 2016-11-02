@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					F00770B61DC7A93B00A2AB43 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = WG239Y9EWK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WG239Y9EWK;
 				INFOPLIST_FILE = "melissatjhia-pset1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.mprog.melissatjhia-pset1";
@@ -272,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WG239Y9EWK;
 				INFOPLIST_FILE = "melissatjhia-pset1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.mprog.melissatjhia-pset1";
@@ -299,6 +302,7 @@
 				F00770CB1DC7A93B00A2AB43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
