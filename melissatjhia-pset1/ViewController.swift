@@ -102,12 +102,12 @@ class ViewController: UIViewController {
     Source: https://www.hackingwithswift.com/example-code/media/uiimagewritetosavedphotosalbum-how-to-write-to-the-ios-photo-album
     */
     func checkIfSaved(_ image: UIImage, savingError error: NSError?, contextInfo: UnsafeRawPointer) {
-        // If failed to save.
+        // If saving failed to save.
         if let failed = error {
             let alertController = UIAlertController(title: "Failed", message: failed.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default))
             present(alertController, animated: true)
-        // If succeeded to save.
+        // If saving succeeded to save.
         } else {
             let alertController = UIAlertController(title: "Succeeded", message: "Image has been saved to cameraroll.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default))
