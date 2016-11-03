@@ -106,12 +106,12 @@ class ViewController: UIViewController {
         // If saving failed to save.
         if let failed = error {
             let alertController = UIAlertController(title: "Failed to save image to cameraroll", message: failed.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default))
+            alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default))
             present(alertController, animated: true)
         // If saving succeeded to save.
         } else {
             let alertController = UIAlertController(title: "Succeeded", message: "Image has been saved to cameraroll", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default))
+            alertController.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default))
             present(alertController, animated: true)
         }
     }
