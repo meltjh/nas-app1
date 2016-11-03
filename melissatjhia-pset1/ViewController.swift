@@ -4,7 +4,6 @@
 //
 //  Created by Melissa Tjhia on 31-10-16.
 //  Copyright © 2016 Melissa Tjhia. All rights reserved.
-//
 
 // Mr. Potato Head application
 
