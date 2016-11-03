@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Images
+    // Images of Mr. Potato Head's parts
     @IBOutlet weak var imageBody: UIImageView!
     
     @IBOutlet weak var imageEars: UIImageView!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageArms: UIImageView!
     
-    // Switches
+    // Switches of Mr. Potato Head's parts
     @IBOutlet weak var switchArms: UISwitch!
     
     @IBOutlet weak var switchEars: UISwitch!
@@ -54,12 +54,20 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var switchShoes: UISwitch!
     
+    // Button to save image
+    @IBOutlet weak var buttonSave: UIButton!
+    
+    // View with Mr. Potato Head
+    @IBOutlet weak var viewPotatoHead: UIView!
+    
+    // Array with the relations between the switches and the images
     var switchImageRelations = [String : UIImageView!]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Relations between the switches and the images
        switchImageRelations = [switchArms.restorationIdentifier!: imageArms, switchEars.restorationIdentifier!: imageEars, switchEyebrows.restorationIdentifier!: imageEyebrows, switchEyes.restorationIdentifier!: imageEyes, switchGlasses.restorationIdentifier!: imageGlasses, switchHat.restorationIdentifier!: imageHat, switchMouth.restorationIdentifier!: imageMouth, switchMustache.restorationIdentifier!: imageMustache, switchNose.restorationIdentifier!: imageNose, switchShoes.restorationIdentifier!: imageShoes]
     }
 
@@ -68,9 +76,43 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    /**
+     Changes the visibility of the parts when switched is touched, depending on if the switch is turned on or off.
+     */
     @IBAction func changeParts(_ sender: UISwitch!) {
-        
         switchImageRelations[sender.restorationIdentifier!]!.isHidden = !sender.isOn
+    }
+    
+    /**
+     Save the image of Mr. Potato Head.
+     */
+    @IBAction func saveImage(_ sender: Any) {
+        // Render the view to an image that can be saved.
+        let renderer = UIGraphicsImageRenderer(size: viewPotatoHead.bounds.size)
+        let image = renderer.image { ctx in
+            viewPotatoHead.drawHierarchy(in: viewPotatoHead.bounds, afterScreenUpdates: true)
+        }
+        // Save image to cameraroll.
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(checkIfSaved(_:savingError:contextInfo:)), nil);
+    }
+    
+    /**
+     Checks if the saving of the image to cameraroll has succeeded or failed.
+     Shows corresponding alert.
+    Source: https://www.hackingwithswift.com/example-code/media/uiimagewritetosavedphotosalbum-how-to-write-to-the-ios-photo-album
+    */
+    func checkIfSaved(_ image: UIImage, savingError error: NSError?, contextInfo: UnsafeRawPointer) {
+        // If failed to save.
+        if let failed = error {
+            let alertController = UIAlertController(title: "Failed", message: failed.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default))
+            present(alertController, animated: true)
+        // If succeeded to save.
+        } else {
+            let alertController = UIAlertController(title: "Succeeded", message: "Image has been saved to cameraroll.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default))
+            present(alertController, animated: true)
+        }
     }
 
 }
