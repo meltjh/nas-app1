@@ -85,6 +85,7 @@ class ViewController: UIViewController {
     
     /**
      Save the image of Mr. Potato Head.
+     Source rendering: https://www.hackingwithswift.com/example-code/media/how-to-render-a-uiview-to-a-uiimage
      */
     @IBAction func saveImage(_ sender: Any) {
         // Render the view to an image that can be saved.
