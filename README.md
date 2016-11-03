@@ -6,3 +6,6 @@ When a nice combination is found, it is possible to save the image by touching t
 The image is then saved to the cameraroll.
 
 ![mrpotatohead](https://github.com/meltjh/nas-app1/raw/master/doc/mrpotatohead.png)
+
+
+<img src="https://github.com/meltjh/nas-app1/raw/master/doc/mrpotatohead.png">
