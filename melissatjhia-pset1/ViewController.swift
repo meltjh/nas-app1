@@ -6,6 +6,8 @@
 //  Copyright © 2016 Melissa Tjhia. All rights reserved.
 //
 
+// Mr. Potato Head application
+
 import UIKit
 
 class ViewController: UIViewController {
